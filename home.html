@@ -9,20 +9,32 @@
 </head>
 <body>
     <div class="header">
-        <p class="tittle"><b>Shop with us</b></p>
-        <div class="cart-icon"><img src="./images/cart-icon.png" alt="" srcset=""><p id="counter">0</p></div>
+        <p class="logo"><b>Shop with us</b></p>
+        <div class="cart"><img src="./images/cart-icon.png" alt="" srcset=""><p id="count">0</p></div>
     </div>
 
     <div class="container">
+
         <div class="sidebar">
-            <div class="product-tittle"><p>Products</p></div>
-            <div id="emptyitem">Empty cart</div>
-            <div class="items-total">
-                <h3>Total</h3>
-                <div id="total">$0.00</div>
+            <div class="head"><p>Products</p></div>
+            <div id="cartItem">Empty cart</div>
+            <div class="foot">
+            <div>
+                <h2>Subtotal</h2>
+                <h3 id="subTotal"></h3>
+            </div>
+            <div>
+                <h2>VAT</h2>
+                <h3 id="vat"></h3>
+            </div>
+            <div>
+                <h2>Total</h2>
+                <h3 id="total"></h3>
+            </div>
             </div>
         </div>
-        <div id="item-section"></div>
+
+        <div id="root"></div>
     </div>
     <script src="home.js"></script>
 </body>

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-size: 18px;
 }
 
 body{
@@ -13,33 +14,33 @@ body{
 }
 
 .header{
+    height: 80px;
+    width: 70%;
+    background-color: aquamarine;
+    border-radius: 3px;
+    margin: 30px 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 80px;
-    width: 80%;
-    background-color: aquamarine;
-    border-radius: 3px;
-    margin: 10px 0;
-    padding: 10px;
+    padding: 15px;
 }
 
-.header .tittle{
+.header .logo{
     font-size: 30px;
     color: black;
 }
 
-.cart-icon{
+.cart{
     display: flex;
     background-color: pink;
     justify-content: space-between;
     align-items: center;
     padding: 7px 10px;
-    border-radius: 2px;
+    border-radius: 3px;
     width: 80px;
 }
 
-.cart-icon .counter{
+.cart p{
   height: 22px;
   width: 22px;
   display: flex;
@@ -52,12 +53,16 @@ body{
 
 .container{
     display: flex;
-    width: 80%;
-    margin-bottom: 10px;
+    width: 70%;
+    margin-bottom: 30px;
 }
 
 #root{
     width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
 }
 
 .sidebar{
@@ -67,118 +72,147 @@ body{
     margin-right: 20px;
     padding: 15px;
     text-align: center;
-    
 }
 
-.product-tittle{
+.head{
     background-color: red;
-    border-radius: 2px;
+    border-radius: 3px;
     height: 40px;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 20px;
     color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.items-total{
+.foot{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     margin:20px 0;
+    /* align-items: center; */
     padding: 10px 0;
     border-top: 1px solid black;
 }
 
+.foot div{
+    display: flex;
+    /* justify-content: flex-end; */
+    margin-top: 3px;
+}
+
+.foot div h2{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.foot div h3{
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
 .box{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
     align-items: center;
+    justify-content: space-between;
     border: 1px solid green;
     border-radius: 5px;
-    padding: 10px;
-    min-width: 200px;
-    max-height: 200px;
-    margin: 2px;
+    padding: 15px;
+    /* min-width: 200px;
+    max-height: 200px; */
+    /* margin: 2px; */
 }
 
-#item-section{
+/* #item-section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 
-.image-part{
-     width: 50%;
-     height: 100px;
+.img-box{
+     width: 100%;
+     height: 180px;
      display: flex;
      align-items: center;
      justify-content: center;
 }
 
-.img{
-    max-width:70%;
-    max-height:70%;
+.images{
+    max-width:90%;
+    max-height:90%;
     object-fit: cover;
     object-position: center;
 }
 
-.product-details{
+.bottom{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center; 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    margin-left: 2px;
-    width: 100%;
-    text-align: center;
-    height: 100px;
+    justify-content: space-between;
+    height: 110px;
 }
 
-.product-details{
+h2{
+    font-size: 20px;
+    color: black;
+}
+
+/* .product-details{
     font-size: 18px;
     color: green;
-}
+} */
 
-.product-details button{
-    width: 80%;
+button{
+    width: 100%;
+    position: relative;
+    border: none;
+    border-radius: 5px;
     background-color: red;
     border: 1px solid green;
     color: white;
-    padding: 3px 7px;
+    padding: 7px 25px;
     cursor: pointer;
 }
 
-.product-details button:hover{
+button:hover{
     width: 85%;
     background-color: blue;
 }
 
-.bought-product{
+.cart-item{
     display: flex;
-    flex-direction: column;
     align-items:center;
     justify-content: space-between;
-    padding: 5px;
+    padding: 10px;
     background-color: rgb(194, 215, 216);
-    margin: 10px;
-    border-bottom: 1px green;
+    border-bottom: 1px solid green;
+    border-radius: 3px;
+    margin: 10px 10px;
+    
 }
 
-.product-img{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+.row-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
     border: 1px solid goldenrod;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.productimage{
-    max-width: 28px;
-    max-height: 28px;
+.rowimg{
+    max-width: 43px;
+    max-height: 43px;
     border-radius: 50%;
 
 }
