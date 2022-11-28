@@ -4,7 +4,7 @@ const product =[
         image:'',
         name:'Bottle of Water',
         price: 0.25,
-        discount:0.1,
+        discount:0,
         VAT:8,
     },
     {
@@ -22,13 +22,21 @@ const product =[
         price: 760.00,
         discount:0,
         VAT:22,
+    },
+    {
+        id:3,
+        image:'',
+        name:'CocaCola',
+        price: 0.50,
+        discount:0.10,
+        VAT:18,
     }
 ];
 
 const categories = [...new Set(product.map((item)=>{
   return item}))]
 let i =0;
-
+let k=0;
 document.getElementById('root').innerHTML=categories.map((item)=>{
     var{image,name,price} = item;
     return(
@@ -39,7 +47,8 @@ document.getElementById('root').innerHTML=categories.map((item)=>{
 
                 <div class='bottom'>
                    <p> ${name} </p>
-                   <h2>$ ${price}</h2>`+ 
+                   <h2>$ ${price}</h2>`+
+                   "<input type='number' min='1' name='' id='"+(k++)+"'>"+ 
                    "<button onclick='addtocart("+(i++)+")'>Add</button>"+
                 `</div>
           </div>`
@@ -74,29 +83,34 @@ function displaycart(a) {
     if (cart.length !== 0){
         document.getElementById('cartItem').innerHTML = cart.map((items) => {
 
-            var { image, name, price, discount, VAT } = items;
-
-            subTotal = subTotal + (price-discount);
-            general_vat = general_vat + ((price-discount) * (VAT / 100));
+            var { id,image, name, price, discount, VAT } = items;
+            var k= document.getElementById(id).value;
+        
+            subTotal = subTotal + (k*(price-discount));
+            general_vat = general_vat + (k*(price-discount) * (VAT / 100));
             let total = general_vat + subTotal;
 
-            document.getElementById("subTotal").innerHTML = "$" + subTotal;
-            document.getElementById("vat").innerHTML = "$" + general_vat;
-            document.getElementById("total").innerHTML = "$" + total;
-
+            document.getElementById("subTotal").innerHTML = "$" + subTotal.toFixed(2);
+            document.getElementById("vat").innerHTML = "$" + general_vat.toFixed(2);
+            document.getElementById("total").innerHTML = "$" + total.toFixed(2);
+     
             return (
                 `<div class='cart-item'>
                          <div class='row-img'>
                              <img class='rowing' alt=${name} src=${image}>
                          </div>
                          <p style="font-size:12px;">${name}</p>
-                         <h2 style="font-size:12px;">$ ${price}</h2>` +
+                         <h2 style="font-size:12px;">${k} X $${price}</h2>` +
                 "<img alt=${name} onclick='delElement(" + (j++) + ")'></img></div>"
 
             );
+        
         }).join('');
+    }
 }
-}
+
+
+
 
 
 
