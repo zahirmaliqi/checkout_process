@@ -190,6 +190,12 @@ h2{
     color: green;
 } */
 
+.in-bttn{
+    display: flex;
+    justify-content: center;
+    margin-top: 42px !important;
+}
+
 button{
     width: 100%;
     position: relative;
